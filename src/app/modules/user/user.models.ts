@@ -44,7 +44,7 @@ const userSchema: Schema<IUser> = new Schema(
     role: {
       type: String,
       enum: Role,
-      default: USER_ROLE.user,
+      default: USER_ROLE.employer,
     },
     address: {
       type: String,

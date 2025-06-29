@@ -3,6 +3,7 @@ import { otpRoutes } from '../modules/otp/otp.routes';
 import { userRoutes } from '../modules/user/user.route';
 import { authRoutes } from '../modules/auth/auth.route';
 import { notificationRoutes } from '../modules/notification/notificaiton.route';
+import { jobpostRoutes } from '../modules/jobpost/jobpost.route';
 
 const router = Router();
 const moduleRoutes = [
@@ -21,6 +22,10 @@ const moduleRoutes = [
   {
     path: '/notifications',
     route: notificationRoutes,
+  },
+  {
+    path: '/jobposts',
+    route: jobpostRoutes,
   },
 ];
 moduleRoutes.forEach(route => router.use(route.path, route.route));
