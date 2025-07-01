@@ -16,7 +16,7 @@
     "start:prod": "node ./dist/server.js",
     "prepare": "husky"
   },
-  "author": "MD Nazmul Hasan",
+  "author": "MD plabon",
   "license": "ISC",
   "description": "",
   "lint-staged": {

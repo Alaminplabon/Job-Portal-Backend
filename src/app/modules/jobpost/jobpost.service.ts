@@ -11,7 +11,7 @@ const getAlljobpost = async (
   query: Record<string, any>,
 ): Promise<{ data: IJob[]; meta: { total: number } }> => {
   const jobModel = new QueryBuilder(Job.find(), query)
-    .search(['title', 'companyName', 'location'])
+    .search(['title', 'location'])
     .filter()
     .paginate()
     .sort();

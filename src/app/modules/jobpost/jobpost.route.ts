@@ -11,9 +11,17 @@ router.post(
   jobpostController.createjobpost,
 );
 
-router.patch('/update/:id', jobpostController.updatejobpost);
+router.patch(
+  '/update/:id',
+  auth(USER_ROLE.employer),
+  jobpostController.updatejobpost,
+);
 
-router.delete('/:id', jobpostController.deletejobpost);
+router.delete(
+  '/:id',
+  auth(USER_ROLE.employer),
+  jobpostController.deletejobpost,
+);
 
 router.get('/:id', jobpostController.getjobpostById);
 router.get('/', jobpostController.getAlljobpost);
