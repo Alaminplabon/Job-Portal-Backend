@@ -33,10 +33,6 @@ const userSchema: Schema<IUser> = new Schema(
       type: String,
       default: null,
     },
-    isGoogleLogin: {
-      type: Boolean,
-      default: false,
-    },
     image: {
       type: String,
       default: null,
@@ -78,18 +74,6 @@ const userSchema: Schema<IUser> = new Schema(
     timestamps: true,
   },
 );
-
-userSchema.pre('save', async function (next) {
-  // eslint-disable-next-line @typescript-eslint/no-this-alias
-  const user = this;
-  if (!user?.isGoogleLogin) {
-    user.password = await bcrypt.hash(
-      user.password,
-      Number(config.bcrypt_salt_rounds),
-    );
-  }
-  next();
-});
 
 // set '' after saving password
 userSchema.post(
