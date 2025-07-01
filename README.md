@@ -75,9 +75,7 @@ NODEMAILER_HOST_PASS="your-email-app-password"
 
 
 # Deployment (Free Hosting)
-You can deploy this backend on free services like:
-
-# Render
+Render
 https://job-portal-backend-9k2z.onrender.com/
 
 
